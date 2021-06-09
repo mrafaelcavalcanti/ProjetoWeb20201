@@ -1,0 +1,5 @@
+package br.com.ufape.bcc.projetoweb20201.model;
+
+public class Usuario {
+
+}

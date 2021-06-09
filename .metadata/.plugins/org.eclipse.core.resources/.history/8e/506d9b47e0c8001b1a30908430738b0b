@@ -1,0 +1,5 @@
+package br.com.ufape.bcc.projetoweb20201.repository;
+
+public class UsuarioDAOI {
+
+}
