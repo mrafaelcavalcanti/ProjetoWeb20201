@@ -1,9 +1,0 @@
-package br.com.ufape.bcc.projetoweb20201.model;
-
-import javax.persistence.Entity;
-
-@Entity (name = "USUARIO")
-
-public class Usuario {
-
-}

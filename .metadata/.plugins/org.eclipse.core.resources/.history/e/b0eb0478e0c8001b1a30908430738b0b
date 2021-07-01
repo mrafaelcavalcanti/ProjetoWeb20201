@@ -1,9 +1,0 @@
-package br.com.ufape.bcc.projetoweb20201.repository;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import br.com.ufape.bcc.projetoweb20201.model.Usuario;
-
-public interface UsuarioDAOI extends JpaRepository<Usuario, Long> {
-
-}
