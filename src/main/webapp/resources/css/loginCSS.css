@@ -1,0 +1,461 @@
+.fundo {
+    background: linear-gradient(45deg, #f3b33dbb, #80ff72bb, #307a59bb);
+    background-size: 300% 300%;
+    
+    animation: colors 10s ease infinite;
+}
+
+@keyframes colors {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+.home-page {
+    
+    font-family: 'Poppins';
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    margin: auto;
+    color: #45DC66;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.entrar {
+    position: absolute;
+    left: 11vw;
+    z-index: 1;
+    width: 26vw;
+    height: 80vh;
+    display: flex;
+    border-radius: 16px 0px 0px 16px;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #45DC66;
+    align-items: center;
+}
+
+.entrar-shadow {
+    position: absolute;
+    left: 11vw;
+    z-index: -1;
+    width: 26vw;
+    height: 80vh;
+    border-radius: 16px 0px 0px 16px;
+    box-shadow: 5px 5px #8888888a;
+}
+
+.cadastrar,
+.entrar-page {
+    margin-left: 26vw;
+    width: 52vw;
+    height: 78vh;
+    display: flex;
+    border-radius: 0px 16px 16px 0px;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #ffff;
+    align-items: center;
+    box-shadow: 5px 5px #8888888a;
+}
+
+.transicao {
+    animation: inativar 0.8s;
+}
+
+@keyframes inativar {
+    from{
+        opacity: 30%;
+        margin-right: 22vw;
+    } 
+    to{
+        opacity: 100%;
+    }
+}
+
+.inativo {
+    display: none;
+}
+
+.ocultar {
+    display: none;
+}
+
+.entrar-btn {
+    width: 150px;
+    height: 50px;
+    border-radius: 40px;
+    border-style: solid;
+    border-color: white;
+    color: white;
+    background-color: transparent;
+    font-weight: bold;
+    margin-top: 100px;
+    transition: 0.3s;
+}
+
+.entrar-btn:hover {
+    font-size: 22px;
+    box-shadow: 0px 0px 0px 5px #ffff;
+    transition: 0.3s;
+}
+
+#cadastrese {
+    width: 170px;
+}
+
+
+.produtor-btn,
+.consumidor-btn,
+.ativo {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    width: 198px;
+    height: 50px;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: #45DC66;
+    color: #45DC66;
+    background-color: transparent;
+    text-align: center;
+    transition: 0.4s;
+}
+
+
+.ativo {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    width: 198px;
+    height: 50px;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: #45DC66;
+    color: white;
+    background-color: #45DC66;
+    text-align: center;
+}
+.produtor-btn:hover,
+.consumidor-btn:hover {
+    color: white;
+    background-color: #45DC66;
+    transition: 0.4s;
+}
+
+
+.entrar-login-btn,
+.cadastrar-btn {
+    font-size: 18px;
+    width: 200px;
+    height: 60px;
+    border-radius: 40px;
+    border-style: solid;
+    border-color:#45DC66;
+    color: white;
+    background-color: #45DC66;
+    font-weight: bold;
+    margin: auto;
+    transition: 0.3s;
+}
+
+.entrar-login-btn:hover,
+.cadastrar-btn:hover {
+    font-size: 25px;
+    box-shadow: 0px 0px 0px 5px #47dc67;
+    transition: 0.3s;
+}
+
+
+.campo {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+    width: 400px;
+    height: 50px;
+    border-radius: 8px;
+    border-style: solid;
+    justify-content: left;
+    border-color: #45DC66;
+    color: #45DC66;
+    background-color: transparent;
+}
+
+.campo:hover {
+    background-color: #cecece80;
+    transition: 0.3s;
+}
+
+.campo:focus {
+    background-color: #cecece6e;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 0 2px black;
+}
+
+.texto-entrar {
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins';
+    color: white;
+}
+
+#bemvindo {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#acessesuaconta {
+    font-size: 20px;
+}
+
+.icone-sistema {
+    margin-top: -180px;
+    margin-bottom: 120px;
+    color: #ffff;
+}
+
+@keyframes rotating {
+    from{
+        transform: rotate(0deg);
+    } 
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.icone-sistema:hover {
+    animation: rotating 4s linear infinite;
+}
+
+
+/*TABLET*/
+@media (min-width: 768px) and (max-width: 1024px) {
+    .botoes {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #bemvindo {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .campo {
+        font-size: 13px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        padding: 20px;
+        width: 320px;
+        height: 40px;
+        border-radius: 8px;
+        border-style: solid;
+        justify-content: left;
+        border-color: #45DC66;
+        color: #45DC66;
+        background-color: transparent;
+    }
+    
+    .campo:hover {
+        background-color: #cecece80;
+        transition: 0.3s;
+    }
+    
+    .campo:focus {
+        background-color: #cecece6e;
+        outline: none;
+        border: none;
+        box-shadow: 0 0 0 2px black;
+    }
+}
+
+/* SMARTPHONE/MOBILE */
+@media (min-width: 320px) and (max-width: 486px) {
+    
+    
+
+    .home-page {
+        width: 100vw;
+        height: 100%;
+        min-height: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .title{
+        font-size: 30px;
+        margin-bottom: 5px;
+        margin-top: 50px;
+    }
+    
+    .entrar {
+        top: 0;
+        margin-top: 20px;
+        left: 9vw;
+        width: 406px;
+        height: 300px;
+        border-radius: 16px 16px 0px 0px;
+        align-items: center;
+    }
+
+    .entrar-shadow {
+        top: 0;
+        margin-top: 20px;
+        position: absolute;
+        left: 9vw;
+        z-index: -1;
+        width: 406px;
+        height: 300px;
+        border-radius: 16px 16px 0px 0px;
+    }
+
+    .cadastrar,
+    .entrar-page {
+        position: relative;
+        margin-top: 200px;
+        margin-left: 15px;
+        width: 390px;
+        height: 600px;
+        display: flex;
+        border-radius: 0px 0px 16px 16px;
+        justify-content: center;
+        flex-direction: column;
+        background-color: #ffff;
+        align-items: center;
+    }
+
+    .entrar-page {
+        margin-top: 300px;
+        width: 390px;
+        height: 450px;
+    }
+
+    .transicao {
+        animation: inativar 0.8s;
+    }
+    
+    @keyframes inativar {
+        from{
+            opacity: 30%;
+            margin-top: 80px;
+        } 
+        to{
+            opacity: 100%;
+        }
+    }
+    
+    .inativo {
+        display: none;
+    }
+    
+    .ocultar {
+        display: none;
+    }
+
+    .entrar-btn {
+        margin-top: 30px;
+        margin-bottom: -50px;
+    }
+    
+    .botoes {
+        display: flex;
+        flex-direction: column;        
+    }
+    
+    .produtor-btn,
+    .consumidor-btn,
+    .ativo {
+        margin-top: 0px;
+        margin-bottom: 10px;
+        width: 198px;
+        height: 50px;
+        border-radius: 8px;
+        border-style: solid;
+        border-color: #45DC66;
+        color: #45DC66;
+        background-color: transparent;
+        text-align: center;
+        transition: 0.4s;
+    }
+    
+    
+    .ativo {
+        margin-top: 0px;
+        margin-bottom: 10px;
+        width: 198px;
+        height: 50px;
+        border-radius: 8px;
+        border-style: solid;
+        border-color: #45DC66;
+        color: white;
+        background-color: #45DC66;
+        text-align: center;
+    }
+    .produtor-btn:hover,
+    .consumidor-btn:hover {
+        color: white;
+        background-color: #45DC66;
+        transition: 0.4s;
+    }
+/*---------------------------*/
+
+    .cadastrar-btn {
+        margin-top: 5px;
+        margin-bottom: -30px;
+    }
+    .campo {
+        margin-top: 0px;
+        margin-bottom: 10px;
+        width: 300px;
+        height: 50px;
+    }
+
+    .texto-entrar {
+        margin-top: -100px;
+        margin-left: 20px;
+        margin-right: 100px;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Poppins';
+        color: white;
+    }
+
+    #bemvindo {
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    #acessesuaconta {
+        font-size: 20px;
+    }
+
+    .icone-sistema {
+        margin-top: 0px;
+        margin-bottom: -1px;
+        margin-left: 280px;
+        color: #ffff;
+    }
+
+    .campo:focus {
+        background-color: #cecece6e;
+        outline: none;
+        border: none;
+        box-shadow: 0 0 0 2px black;
+    }
+}

@@ -1,0 +1,162 @@
+.fundo {
+    animation: acesso 2s;
+    font-family: 'Poppins';
+}
+
+@keyframes acesso {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+.top-bar {
+    top: 0;
+    position: sticky;
+    width: 99.1vw;
+    height: 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #45DC66;
+    
+}
+
+.usuario,
+.barra-pesquisa,
+.carrinho {
+    height: 4vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.usuario,
+.carrinho {
+    width: 30vw;
+}
+
+.barra-pesquisa {
+    width: 40vw;
+}
+
+.carrinho:hover {
+    color: #ffff;
+}
+
+.campo {
+    width: 550px;
+    height: 3vw;
+    border-radius: 8px;
+    border-style: solid;
+    justify-content: left;
+    border-color: #000;
+    color: #000;
+    background-color: transparent;
+}
+.campo:hover {
+    background-color: #cecece80;
+    transition: 0.3s;
+}
+
+.campo:focus {
+    background-color: #cecece6e;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 0 2px #ffff;
+}
+
+.menu-lateral:hover,
+.top-bar:hover {
+    box-shadow: 5px 5px #8888888a;
+    transition: 0.2s;
+}
+
+.corpo {
+    display: flex;
+}
+
+.menu-lateral {
+    top: 4vw;
+    position: sticky;
+    width: 20vw;
+    height: 92.5vh;
+    border: 5px;
+    border-style: solid;
+    border-color: #45DC66;
+    background-color: #45DC66;
+}
+
+.filtro-produtos{
+    padding-top: 5vw;
+    display: flex;
+    flex-direction: column;
+    padding-left: 5vw;
+}
+
+a:link {
+    margin-top: 7px;
+    margin-bottom: 7px;
+    font-size: 25px;
+    color:#000000;
+    text-decoration:none;
+}
+a:link:hover {
+    color: #ffff;
+}
+
+.tela-produtos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-bottom: 5vw;
+    width: 80vw;
+    
+}
+
+.produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3vw;
+    height: 500px;
+    width: 400px;
+    background-color: #45DC66;
+    border-radius: 10px;
+}
+
+.produto:hover {
+    box-shadow: 10px 10px #8888888a;
+    transition: 0.3s;
+}
+
+img {
+    
+    border-radius: 12px;
+}
+
+.nome-produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    font-size: 30px;
+    color: #ffff;
+}
+
+.info-produto {
+    margin-left: 100px;
+    width: 400px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    color: #ffff;
+}

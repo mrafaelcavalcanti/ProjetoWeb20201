@@ -1,0 +1,235 @@
+body {
+    animation: ativa 2s;
+}
+
+@keyframes ativa {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+@keyframes inativa {
+    from {
+        opacity: 100%;
+    }
+    to {
+        opacity: 0%;
+    }
+}
+
+.fundo {
+    font-family: 'Poppins';
+    position: relative;
+}
+
+.top-bar {
+    top: 0;
+    position: sticky;
+    width: 100vw;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #45DC66;
+    
+}
+
+.usuario,
+.barra-pesquisa,
+.carrinho {
+    height: 4vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.usuario,
+.carrinho {
+    width: 30vw;
+}
+
+.barra-pesquisa {
+    width: 40vw;
+}
+
+.carrinho:hover {
+    color: #ffff;
+}
+
+.config-usuario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+
+.profile-usuario {
+    width: 30vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #45DC66;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.profile-picture {
+    display: inline-block;
+    border-radius: 100%;
+    border-color: #ffff;
+    border-style: solid;
+    width: 250px;
+    height: 250px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    transition: 0.3s;
+}
+
+.profile-picture:hover {
+    margin-top: -8px;
+    margin-left: -8px;
+    box-shadow: 8px 8px #8888888a;
+    transition: 0.3s;
+}
+
+.campos {
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4vw;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.endereco-dados {
+    display: flex;
+    flex-direction: column;
+}
+
+label,
+.inputs-user {
+    padding: 8px;
+    margin-top: 8px;
+    border-radius: 8px;
+    border-style: solid;
+    transition: 0.3s;
+}
+
+label:hover {
+    margin-top: -5px;
+    margin-left: -8px;
+    margin-bottom: 5px;
+    box-shadow: 5px 5px #8888888a;
+    transition: 0.3s;
+}
+
+.config {
+    position: relative;
+    width: 50vw;
+    height: 37vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #45DC66;
+    border-radius: 10px;
+    font-size: 1.5vw;
+    transition: 0.3s;
+}
+
+.config-1 {
+    margin-bottom: 6vh;
+}
+
+
+.profile-usuario,
+.config {
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+.profile-usuario:hover,
+.config:hover {
+    margin-top: -10px;
+    margin-left: 1vw;
+    box-shadow: 10px 10px #8888888a;
+    transition: 0.3s;
+}
+
+.profile-usuario:hover {
+    margin-right: 2.8vw;
+}
+
+.cadastrar-produto {
+    position: absolute;
+    width: 100vw;
+    height: 92vh;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(3px);
+    background-color: #00000054;
+    font-size: 2vw;
+    transition: 1.3s;
+}
+
+.produto {
+    position: relative;
+    width: 60vw;
+    height: 70vh;
+    margin-top: -15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #45DC66;
+    border-radius: 10px;
+    font-size: 1.5vw;
+    box-shadow: 10px 10px #8888888a;
+    transition: 1.3s;
+}
+
+.close-icon {
+    padding-top: 8px;
+    padding-left: 20px;
+    margin-left: 55vw;
+    height: 5vh;
+}
+
+.iconify:hover {
+    color: red;
+    transition: 0.17s;
+}
+
+
+.produto-form {
+    height: 65vh;
+}
+
+.inativa {
+    display: none;
+}
+
+.transicao {
+    animation: inativa 0.5s;
+}
+
+.ativa {
+    animation: ativa 0.5s;
+}
+
+.produto-form {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}

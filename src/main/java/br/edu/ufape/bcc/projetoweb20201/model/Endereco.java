@@ -1,17 +1,30 @@
 package br.edu.ufape.bcc.projetoweb20201.model;
 
+import java.io.Serializable;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
+
+
 @Entity
 @Table (name = "endereco")
-public class Endereco {
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) 
+public class Endereco implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,7 +45,11 @@ public class Endereco {
 	@Column(name = "cep")
 	private String cep;
 	
-	@OneToOne(mappedBy = "endereco")
+	
+	//@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "enderecoU")
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "usuario_id")
+	@JsonIgnore
 	private Usuario usuario;
 		
 	public Endereco() {
@@ -40,7 +57,6 @@ public class Endereco {
 	}
 	
 	public Endereco(Long id, String cidade, String bairro, String rua, int numero, String complemento, String cep) {
-		super();
 		this.id = id;
 		this.cidade = cidade;
 		this.bairro = bairro;
@@ -102,8 +118,5 @@ public class Endereco {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	
-	
-	
-	
+		
 }

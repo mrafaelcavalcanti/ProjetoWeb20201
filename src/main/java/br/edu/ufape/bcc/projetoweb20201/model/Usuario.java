@@ -1,8 +1,11 @@
 package br.edu.ufape.bcc.projetoweb20201.model;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,18 +14,25 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
+
 
 @Entity 
 @Table (name = "usuario")
-public class Usuario {
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) 
+public class Usuario implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank(message = "Nome não pode estar vazio")
+	@Column(name ="nome")
 	private String nome;
 
 	@Email(message = "Email invalido")
@@ -45,9 +55,14 @@ public class Usuario {
 	@Column(name = "imagem_perfil")
 	private byte[] imagemPerfil;
 	
-	@Valid
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="id_usuario_endereco", referencedColumnName = "id")
+	//@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	
+	//@Valid
+	//@OneToOne(fetch = FetchType.LAZY, cascade =  CascadeType.ALL)
+	//@JoinColumn(name="id_usuario", referencedColumnName = "id")
+	//@OneToOne(cascade = CascadeType.ALL)
+	//@JoinColumn(name = "usuario_endereco_id")
+	@OneToOne(mappedBy =  "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Endereco endereco;
 
 
@@ -56,8 +71,7 @@ public class Usuario {
 	}
 
 	public Usuario(Long id, String nome, String email, String senha, String telefone, int tipoUsuario,
-			String numeroCartao, String chavePix, byte[] imagemPerfil, Endereco endereco) {
-		super();
+			String numeroCartao, String chavePix, byte[] imagemPerfil) {
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
@@ -67,7 +81,6 @@ public class Usuario {
 		this.numeroCartao = numeroCartao;
 		this.chavePix = chavePix;
 		this.imagemPerfil = imagemPerfil;
-		this.endereco = endereco;
 	}
 
 	public Long getId() {
@@ -132,14 +145,6 @@ public class Usuario {
 
 	public void setChavePix(String chavePix) {
 		this.chavePix = chavePix;
-	}
-
-	public byte[] getImagemPergil() {
-		return imagemPerfil;
-	}
-
-	public void setImagemPergil(byte[] imagemPerfil) {
-		this.imagemPerfil = imagemPerfil;
 	}
 
 	public byte[] getImagemPerfil() {
