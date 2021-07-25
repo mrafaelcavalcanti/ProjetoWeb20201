@@ -5,6 +5,9 @@
 
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +23,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 </head>
-<body class="fundo">
+<body>
+    <div class="fundo">
+    <div hidden><sec:authentication property="principal.email" /></div> <!-- COM ISSO AGORA É POSSIVEL SUSBSITUIR A CHAMADA DE USUARIO VIA API A CADA ACESSO A CADA PAGINA-->
     <div id="usuario-logado" hidden><%=request.getRemoteUser() %></div>
     
     <div class="top-bar">
@@ -29,7 +34,7 @@
         </div>
         
         <div class="barra-pesquisa">
-            <input type="text" class="campo">
+            <input type="text" id="input-pesquisa" class="campo">
         </div>
         
         <div class="carrinho">
@@ -45,6 +50,36 @@
                 th:value="${_csrf.token}" />
         </form>
     
+    </div>
+
+    <div class="detalhes-produto inativa" id="fecharDetalhesProduto">
+        <div class="produtos">
+            <div class="close-icon">
+                <button onclick="fecharDetalhesProduto()" style="background-color: transparent; border: none;"><span  class="iconify" data-icon="akar-icons:circle-x" data-inline="false" data-width="40px"></span></button>
+            </div>
+            
+            <div style="display: flex;">
+                <div class="imagem-produto">
+                    <img src="https://img.mfrural.com.br/api/image?url=https://s3.amazonaws.com/mfrural-produtos-us/235482-346662-1895889-mudas-de-morango-importadas-da-espanha-50.webp&width=800&height=480&mode=4" width="400" height="450">
+                </div>
+                <div class="produto-form">
+                    <input id="id-produto" class="inputs-user" hidden></input>
+                    <input id="nome-produto" class="inputs-user">NOME</input>
+                    <input id="categoria-produto" class="inputs-user" value="" readonly style="text-align: center;">CATEGORIA</input>
+                    <input id="peso-produto" class="inputs-user">PESO</input>
+                    <input id="quantidade-produto" class="inputs-user">QUANTIDADE</input>
+                    <input id="preco-produto" class="inputs-user">PREÇO</input>
+                    <div>
+                        <input id="quantidade-comprar" type="number" min="1" max="7" step="1" value="1" onclick="valorTotal()">
+                        <label id="valor-total">TOTAL R$ 0</label>
+                    </div>
+                    <button class="inputs-produto" onclick="comprarProduto()">COMPRAR</button>
+                    <div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
     <div class="corpo">
@@ -68,5 +103,6 @@
         </div>
 
     </div>
+</div>
 </body>
 </html>

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class PagesController {
     
-    @RequestMapping(value={"/","/home"})
+    @RequestMapping("/home")
     public String home (HttpServletRequest request, Principal principal) {
         
         if (principal!=null) {
@@ -31,5 +31,21 @@ public class PagesController {
         }
         return "usuario";
 
+    }
+
+    @RequestMapping("/carrinho")
+    public String carrinho (HttpServletRequest request, Principal principal) {
+        if (principal!=null) {
+			System.out.println("Authorities do user" +principal.getName());
+        }
+        return "carrinho";
+    }
+
+    @RequestMapping("/meusprodutos")
+    public String meusprodutos (HttpServletRequest request, Principal principal) {
+        if (principal!=null) {
+			System.out.println("Authorities do user" +principal.getName());
+        }
+        return "meusprodutos";
     }
 }

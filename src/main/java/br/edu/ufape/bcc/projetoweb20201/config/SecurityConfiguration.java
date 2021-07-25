@@ -42,13 +42,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
         .antMatchers("/usuarios/novo");
 
-        /*http.authorizeRequests().antMatchers("/api/produtos/").permitAll();
+        //http.authorizeRequests().antMatchers("/api/produtos/").permitAll();
         http.authorizeRequests().antMatchers("/api/produtos/getByCategoria/**").hasAnyAuthority("LOGADO");
         http.authorizeRequests().antMatchers("/api/produtos/getByName/**").hasAnyAuthority("LOGADO");
         http.authorizeRequests().antMatchers("/api/produtos/getById/**").hasAnyAuthority("LOGADO");
         http.authorizeRequests().antMatchers("/api/produtos/get/all/**").hasAnyAuthority("LOGADO");
-        http.authorizeRequests().antMatchers("/api/produtos/getByUserProducts/**").hasAnyAuthority("LOGADO");*/
-        http.authorizeRequests().antMatchers("/home/**").hasAnyAuthority("LOGADO");
+        http.authorizeRequests().antMatchers("/api/produtos/getByUserProducts/**").hasAnyAuthority("LOGADO");
+
+        http.authorizeRequests().antMatchers("/api/carrinho/**").hasAnyAuthority("LOGADO");
+        
+        http.authorizeRequests().antMatchers("/home").hasAnyAuthority("LOGADO");
         http.authorizeRequests().antMatchers("/usuario").hasAnyAuthority("LOGADO");
 
         http.formLogin().loginPage("/login").defaultSuccessUrl("/home");

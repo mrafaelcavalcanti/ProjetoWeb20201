@@ -15,7 +15,7 @@ public class MyUserDetails implements UserDetails {
     private static final long serialVersionUID = 1L;
     private String userName;
     private String password;
-    //private String email;
+    private String email;
     //private Long id;
     //private int tipo;
     private boolean active = true;
@@ -33,7 +33,7 @@ public class MyUserDetails implements UserDetails {
         Long id = usuario.getId();
         this.userName = Long.toString(id); //usuario.getEmail();
         this.password = usuario.getSenha();
-        //this.email = usuario.getEmail();
+        this.email = usuario.getEmail();
         //this.id = usuario.getId();
         //this.tipo = usuario.getTipoUsuario();
         this.active = true;
@@ -47,9 +47,9 @@ public class MyUserDetails implements UserDetails {
     }
 
     
-    /*public String getEmail() {
+    public String getEmail() {
         return this.email;
-    }*/
+    }
 
     /*public Long getId() {
         return this.id;

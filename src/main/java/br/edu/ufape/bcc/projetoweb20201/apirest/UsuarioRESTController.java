@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.ufape.bcc.projetoweb20201.model.Usuario;
-import br.edu.ufape.bcc.projetoweb20201.repository.EnderecoDAOI;
 import br.edu.ufape.bcc.projetoweb20201.repository.UsuarioDAOI;
 
 

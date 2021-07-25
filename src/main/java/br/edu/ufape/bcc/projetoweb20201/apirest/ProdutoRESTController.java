@@ -45,6 +45,8 @@ public class ProdutoRESTController {
 
     @GetMapping("/getByName/{name}")
     public List<Produto> getProdutoByName(@PathVariable("name") String name) {
+        String n = name;
+        System.out.println(n);
         return produtoDAOI.findByName(name);
     }
 

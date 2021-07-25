@@ -108,10 +108,8 @@ function doPostProduto(url, id, nome, categoria, peso, preco, quantidade, id_usu
             return response.json();
         })
         .then(function (data) {
-            if(data.lengt) {
-                console.log(data);
-                alert("Produto cadastrado com sucesso");
-            }
+            console.log(data);
+            alert("Produto cadastrado com sucesso");
         })
 }
 

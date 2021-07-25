@@ -5,6 +5,8 @@
 
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -21,6 +23,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 <body>
+    <div hidden><sec:authentication property="principal.password" /></div>
     <div id="usuario-logado" hidden><%=request.getRemoteUser() %></div>
     <div class="fundo">
     <div class="top-bar">
@@ -29,7 +32,8 @@
         </div>
         
         <div class="barra-pesquisa">
-            <input type="text" class="campo">
+            <input type="text" style="background: transparent;
+            border: none;">
         </div>
         
         <div class="carrinho">
@@ -75,18 +79,21 @@
                 <input id="telefone" class="inputs-user" value="">TELEFONE</input>
                 <input type="password" id="senha" class="inputs-user" value="">SENHA</input>
                 <button class="inputs-user" onclick="atualizarDadosUsuario()">ATUALIZAR DADOS</button></br>
-                <input id="tipo-usuario" class="inputs-user" value="" readonly></input>
+                <input id="tipo-usuario" class="inputs-user" value="" readonly style="text-align: center;"></input>
             </div>
 
         </div>
 
         <div class="config-latera">
             <div class="config config-1">
+                <h2 style="margin-top: -40px;">DADOS DE ENDERECO</h2>
                 <div class="endereco-dados">
                     <input id="id-endereco" hidden value=""></input>
                     <input id="cidade-endereco" class="inputs-user" value="">CIDADE</input>
                     <input id="bairro-endereco" class="inputs-user" value="">BAIRRO</input>
                     <input id="rua-endereco" class="inputs-user" value="">RUA</input>
+                </div>
+                <div class="endereco-dados">
                     <input id="numero-endereco" class="inputs-user" value="">NUMERO</input>
                     <input id="complemento-endereco" class="inputs-user" value="">COMPLEMENTO</input>
                     <input id="cep-endereco" class="inputs-user" value="">CEP</input>
@@ -94,10 +101,11 @@
             </div>
 
             <div class="config config-2">
+                <h2>PRODUTOS</h2>
                 <label>CONFIGURAÇAO 1</label>
                 <label>CONFIGURAÇAO 2</label>
                 <label>CONFIGURAÇAO 3</label>
-                <label>CONFIGURAÇAO 4</label>
+                <label onclick="location.href = 'http://localhost:8080/meusprodutos';">MEUS PRODUTOS</label>
                 <label onclick="abrirCadastrarProduto()">CADASTRAR PRODUTO</label>
             </div>
         </div>

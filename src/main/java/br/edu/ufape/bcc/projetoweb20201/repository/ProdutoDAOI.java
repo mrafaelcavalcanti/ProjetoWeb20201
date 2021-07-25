@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import br.edu.ufape.bcc.projetoweb20201.model.Produto;
@@ -11,8 +12,8 @@ import br.edu.ufape.bcc.projetoweb20201.model.Produto;
 @Repository
 public interface ProdutoDAOI extends JpaRepository<Produto, Long>{
 
-    @Query("SELECT p FROM Produto p WHERE p.nomeProduto LIKE '%%:name%%'")
-    public List<Produto> findByName(String name);
+    @Query(value = "SELECT * FROM produto WHERE nome_produto LIKE %:name%", nativeQuery = true)
+    public List<Produto> findByName(@Param("name") String name);
 
     @Query("SELECT p FROM Produto p WHERE p.categoria=:categoria")
     public List<Produto> findByCategoria(int categoria);

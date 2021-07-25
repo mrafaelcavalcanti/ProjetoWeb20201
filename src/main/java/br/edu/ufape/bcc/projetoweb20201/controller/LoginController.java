@@ -21,7 +21,7 @@ public class LoginController {
     @Autowired
 	UsuarioDAOI usuarioDAOI;
 
-	@RequestMapping(method= RequestMethod.GET,path="/login")
+	@RequestMapping(method= RequestMethod.GET,path={"/","/login"})
 	public String entrar() {
 
 		return "login";
